@@ -1,0 +1,1451 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A Surprise for Kunj Kuripey 💛</title><style>
+
+/* =========================================
+   RESET & VARIABLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --bg: #fff9ed;
+    --dark: #2e2118;
+    --gold: #e6ad45;
+    --pink: #e98391;
+    --brown: #593522;
+    --paper: #fffdf7;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--dark);
+}
+
+/* =========================================
+   MUSIC
+========================================= */
+
+#musicBtn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1000;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(70,40,20,.15);
+
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(10px);
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================================
+   SCREEN SYSTEM
+========================================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(circle at top left,
+        #fffdf5,
+        #fff4dc 55%,
+        #f6e6c9);
+
+    animation: fadeIn .7s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tap {
+    position: absolute;
+    bottom: 28px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: .55;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,100% { opacity: .35; }
+    50% { opacity: .8; }
+}
+
+/* =========================================
+   SCREEN 1 — GIFT
+========================================= */
+
+#giftScreen {
+    background:
+        radial-gradient(circle at center,
+        #fffdf4,
+        #f9edcf);
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 25px;
+    animation: sparkle 2s infinite alternate;
+}
+
+@keyframes sparkle {
+    from {
+        transform: scale(.6) rotate(0deg);
+        opacity: .3;
+    }
+
+    to {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.gift-box {
+    position: relative;
+
+    width: 180px;
+    height: 150px;
+
+    margin-bottom: 35px;
+
+    cursor: pointer;
+
+    animation: floatGift 3s ease-in-out infinite;
+}
+
+@keyframes floatGift {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.gift-lid {
+    position: absolute;
+
+    top: 0;
+    left: -10px;
+
+    width: 200px;
+    height: 45px;
+
+    background: #e6ad45;
+
+    border-radius: 8px;
+}
+
+.gift-body {
+    position: absolute;
+
+    top: 40px;
+
+    width: 180px;
+    height: 110px;
+
+    background: #f2c76d;
+
+    border-radius: 5px;
+}
+
+.ribbon-v {
+    position: absolute;
+
+    left: 78px;
+
+    width: 24px;
+    height: 150px;
+
+    background: #e98391;
+
+    z-index: 3;
+}
+
+.ribbon-h {
+    position: absolute;
+
+    top: 12px;
+
+    width: 200px;
+    height: 18px;
+
+    background: #e98391;
+
+    z-index: 4;
+}
+
+.gift-title {
+    font-size: clamp(30px, 9vw, 55px);
+    margin-bottom: 12px;
+}
+
+.gift-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 450px;
+    opacity: .7;
+}
+
+.magic-btn {
+    margin-top: 35px;
+
+    padding: 17px 30px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #2e2118;
+    color: #fff8eb;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(50,30,10,.2);
+
+    transition: .25s;
+}
+
+.magic-btn:active {
+    transform: scale(.94);
+}
+
+/* =========================================
+   SCREEN 2 — PULL
+========================================= */
+
+#pullScreen {
+    background:
+        linear-gradient(160deg,
+        #fff7e7,
+        #f8e6c9);
+}
+
+.small-text {
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    opacity: .5;
+
+    margin-bottom: 25px;
+}
+
+.pull-card {
+    width: min(340px, 90vw);
+
+    background: #fffdf8;
+
+    padding: 45px 25px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 60px rgba(70,40,10,.15);
+
+    cursor: pointer;
+}
+
+.pull-icon {
+    font-size: 65px;
+    margin-bottom: 20px;
+
+    animation: pullMove 1.5s infinite;
+}
+
+@keyframes pullMove {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+}
+
+.pull-card h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.pull-card p {
+    line-height: 1.6;
+    opacity: .65;
+}
+
+/* =========================================
+   BIRTHDAY REVEAL
+========================================= */
+
+.big-birthday {
+    font-size: clamp(50px, 15vw, 110px);
+
+    line-height: .9;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+}
+
+.reveal-name {
+    color: var(--pink);
+    font-size: clamp(27px, 8vw, 55px);
+
+    margin-top: 20px;
+}
+
+.reveal-small {
+    max-width: 450px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    opacity: .7;
+
+    margin-top: 25px;
+}
+
+/* =========================================
+   YOUR DAY SCREEN
+========================================= */
+
+.day-screen {
+    background:
+        radial-gradient(circle,
+        #fffdf6,
+        #f8e9ca);
+}
+
+.your-day {
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(55px, 18vw, 120px);
+
+    font-weight: 900;
+
+    line-height: .8;
+}
+
+.official {
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+
+    opacity: .5;
+}
+
+/* =========================================
+   CAKE SCREEN
+========================================= */
+
+#cakeScreen {
+    background:
+        linear-gradient(
+            180deg,
+            #fff8ea,
+            #f5dfba
+        );
+}
+
+.section-title {
+    font-size: clamp(35px, 9vw, 65px);
+    margin-bottom: 12px;
+}
+
+.section-sub {
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    opacity: .65;
+
+    margin-bottom: 35px;
+}
+
+.cake-wrap {
+    position: relative;
+
+    width: 290px;
+    height: 330px;
+
+    margin: 20px auto;
+}
+
+/* plate */
+
+.plate {
+    position: absolute;
+
+    bottom: 20px;
+    left: 10px;
+
+    width: 270px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e6d6c1;
+
+    box-shadow:
+        inset 0 8px 0 #f8f0e4,
+        0 10px 15px rgba(0,0,0,.12);
+}
+
+/* cake */
+
+.cake-bottom {
+    position: absolute;
+
+    bottom: 55px;
+    left: 30px;
+
+    width: 230px;
+    height: 105px;
+
+    border-radius: 0 0 30px 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5a2c1b,
+            #8c4b2b,
+            #4b2418
+        );
+
+    box-shadow:
+        inset 0 -12px rgba(0,0,0,.15);
+}
+
+.cake-top {
+    position: absolute;
+
+    bottom: 135px;
+    left: 30px;
+
+    width: 230px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #a45b35,
+            #65321e
+        );
+}
+
+.chocolate-drip {
+    position: absolute;
+
+    bottom: 120px;
+    left: 40px;
+
+    width: 210px;
+    height: 40px;
+
+    background: #3c1c12;
+
+    border-radius:
+        0 0 20px 20px;
+}
+
+/* candle */
+
+.candle {
+    position: absolute;
+
+    width: 15px;
+    height: 75px;
+
+    bottom: 175px;
+
+    border-radius: 5px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #f49ab5,
+            #f49ab5 8px,
+            #fff3e8 8px,
+            #fff3e8 14px
+        );
+}
+
+.c1 { left: 70px; }
+.c2 { left: 137px; }
+.c3 { left: 205px; }
+
+.flame {
+    position: absolute;
+
+    top: -30px;
+    left: -4px;
+
+    width: 23px;
+    height: 30px;
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff 5%,
+            #ffd54a 40%,
+            #ff8b24 70%
+        );
+
+    box-shadow:
+        0 0 25px #ffb43f;
+
+    animation: flicker .6s infinite alternate;
+}
+
+@keyframes flicker {
+    from {
+        transform: rotate(-5deg) scale(.9);
+    }
+
+    to {
+        transform: rotate(5deg) scale(1.1);
+    }
+}
+
+.cake-instruction {
+    margin-top: 25px;
+
+    font-size: 16px;
+
+    opacity: .65;
+}
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+#balloonScreen {
+    background:
+        linear-gradient(
+            180deg,
+            #fff8e9,
+            #f7e7c6
+        );
+}
+
+.balloon-area {
+    width: min(700px, 100%);
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 30px;
+}
+
+.balloon {
+    width: 105px;
+    height: 135px;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    position: relative;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset -12px -12px 20px rgba(0,0,0,.1),
+        0 10px 25px rgba(0,0,0,.08);
+
+    animation: balloonFloat 4s ease-in-out infinite;
+
+    transition: .3s;
+}
+
+.balloon:after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -65px;
+    left: 50%;
+
+    width: 1px;
+    height: 65px;
+
+    background: rgba(70,40,20,.35);
+}
+
+.balloon:active {
+    transform: scale(1.2);
+}
+
+@keyframes balloonFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+.b1 { background: #ed8f98; }
+.b2 { background: #e6b95e; animation-delay: .4s; }
+.b3 { background: #a8c6a0; animation-delay: .8s; }
+.b4 { background: #c9a1bd; animation-delay: 1.2s; }
+.b5 { background: #e69f6c; animation-delay: 1.6s; }
+
+.balloon-popup {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(50,30,20,.35);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 500;
+}
+
+.balloon-popup.show {
+    display: flex;
+}
+
+.message-card {
+    max-width: 450px;
+
+    background: #fffdf7;
+
+    padding: 40px 25px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 25px 80px rgba(0,0,0,.2);
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+.close-message {
+    margin-top: 25px;
+
+    border: none;
+
+    background: var(--dark);
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+#memoryScreen {
+    justify-content: flex-start;
+
+    padding-top: 80px;
+}
+
+.memory-gallery {
+    width: min(900px, 100%);
+
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    padding: 30px 10px 50px;
+
+    scroll-snap-type: x mandatory;
+}
+
+.memory-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.memory {
+    min-width: min(78vw, 340px);
+
+    height: 480px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background: white;
+
+    scroll-snap-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(50,30,10,.15);
+}
+
+.memory img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* =========================================
+   LETTER
+========================================= */
+
+#letterScreen {
+    background:
+        radial-gradient(
+            circle at top,
+            #f9edd5,
+            #f0d9b3
+        );
+}
+
+.envelope {
+    width: min(330px, 90vw);
+    height: 220px;
+
+    background: #e8b7a0;
+
+    position: relative;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 20px 50px rgba(80,40,20,.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+.envelope:before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    border-left: 165px solid transparent;
+    border-right: 165px solid transparent;
+
+    border-top: 110px solid #d99d83;
+}
+
+.envelope span {
+    z-index: 2;
+
+    font-size: 45px;
+}
+
+.open-letter-text {
+    margin-top: 30px;
+
+    opacity: .65;
+}
+
+.letter-box {
+    width: min(720px, 95vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    display: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #fffdf6,
+            #fffdf6 31px,
+            #f3e9d7 32px
+        );
+
+    padding: 45px 25px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 25px 80px rgba(60,35,15,.25);
+
+    text-align: left;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+.letter-box.show {
+    display: block;
+}
+
+.letter-box h2 {
+    text-align: center;
+
+    color: #b96970;
+
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   FINAL
+========================================= */
+
+#finalScreen {
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8e7,
+            #efd09a
+        );
+}
+
+.final-happy {
+    font-family: Arial, sans-serif;
+
+    font-weight: 900;
+
+    font-size: clamp(65px, 20vw, 140px);
+
+    line-height: .75;
+
+    letter-spacing: -5px;
+}
+
+.final-name {
+    margin-top: 30px;
+
+    font-size: clamp(25px, 8vw, 50px);
+
+    color: #d6787f;
+}
+
+.final-love {
+    margin-top: 35px;
+
+    max-width: 500px;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+}
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 10px;
+    height: 15px;
+
+    z-index: 2000;
+
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .balloon {
+        width: 90px;
+        height: 115px;
+    }
+
+    .cake-wrap {
+        transform: scale(.9);
+        margin-top: -10px;
+        margin-bottom: -10px;
+    }
+
+}
+
+</style></head><body><audio id="music" loop>
+    <source src="music2.mp3" type="audio/mpeg">
+</audio><button id="musicBtn" onclick="toggleMusic()">🔊</button>
+
+<!-- =========================================
+     SCREEN 1 — GIFT
+========================================= --><section class="screen active" id="giftScreen"><div class="sparkle" style="top:15%;left:20%">✨</div>
+<div class="sparkle" style="top:25%;right:15%">✦</div>
+<div class="sparkle" style="bottom:25%;left:15%">✨</div>
+
+<div class="gift-box">
+    <div class="gift-lid"></div>
+    <div class="gift-body"></div>
+    <div class="ribbon-v"></div>
+    <div class="ribbon-h"></div>
+</div>
+
+<p class="small-text">a little something, for you</p>
+
+<h1 class="gift-title">A surprise for<br>Kunj Kuripey 💛</h1>
+
+<p class="gift-subtitle">
+    Someone who loves you made this —
+    just for you.
+</p>
+
+<button class="magic-btn" onclick="nextScreen('pullScreen')">
+    Unwrap it ✨
+</button>
+
+<div class="tap">SOUND ON FOR THE FULL MAGIC</div>
+
+</section><!-- =========================================
+     SCREEN 2 — PULL
+========================================= --><section class="screen" id="pullScreen"><p class="small-text">pull & release</p>
+
+<div class="pull-card" onclick="nextScreen('birthdayScreen')">
+
+    <div class="pull-icon">🎀</div>
+
+    <h2>Make a wish…</h2>
+
+    <p>
+        Something magical is waiting
+        on the other side.
+    </p>
+
+</div>
+
+<div class="tap">TAP TO CONTINUE</div>
+
+</section><!-- =========================================
+     SCREEN 3 — HAPPY BIRTHDAY
+========================================= --><section class="screen" id="birthdayScreen"
+onclick="nextScreen('dayScreen')"><p class="small-text">it’s officially your day</p>
+
+<h1 class="big-birthday">
+    Happy<br>Birthday
+</h1>
+
+<h2 class="reveal-name">
+    Kunj Kuripey 💛
+</h2>
+
+<p class="reveal-small">
+    To my pwonah, my shundarii kunjee…
+    someone very special is being celebrated today.
+</p>
+
+<div class="tap">TAP ANYWHERE TO CONTINUE</div>
+
+</section><!-- =========================================
+     SCREEN 4 — YOUR DAY
+========================================= --><section class="screen day-screen"
+id="dayScreen"
+onclick="nextScreen('cakeScreen')"><p class="official">It’s officially</p>
+
+<div class="your-day">
+    YOUR<br>DAY
+</div>
+
+<p class="reveal-small">
+    And this whole little surprise
+    is only for you 💛
+</p>
+
+<div class="tap">TAP ANYWHERE TO CONTINUE</div>
+
+</section><!-- =========================================
+     SCREEN 5 — CAKE
+========================================= --><section class="screen" id="cakeScreen"><h1 class="section-title">
+    First things first 🎂
+</h1>
+
+<p class="section-sub">
+    Baking something sweet…
+</p>
+
+<div class="cake-wrap">
+
+    <div class="plate"></div>
+
+    <div class="cake-bottom"></div>
+    <div class="cake-top"></div>
+    <div class="chocolate-drip"></div>
+
+    <div class="candle c1">
+        <div class="flame"></div>
+    </div>
+
+    <div class="candle c2">
+        <div class="flame"></div>
+    </div>
+
+    <div class="candle c3">
+        <div class="flame"></div>
+    </div>
+
+</div>
+
+<p class="cake-instruction">
+    Make a wish… then tap the cake 🕯️
+</p>
+
+<button class="magic-btn" onclick="blowCake()">
+    Blow the candles ✨
+</button>
+
+</section><!-- =========================================
+     SCREEN 6 — BALLOONS
+========================================= --><section class="screen" id="balloonScreen"><h1 class="section-title">
+    Pop the balloons 🎈
+</h1>
+
+<p class="section-sub">
+    …and discover a few reasons
+    you're loved 💛
+</p>
+
+<div class="balloon-area">
+
+    <div class="balloon b1"
+    onclick="popBalloon(this, 'Happy birthday chakaraa kuttyyy')"></div>
+
+    <div class="balloon b2"
+    onclick="popBalloon(this, 'Enikk ninteee chirii enna ishtava ariyavoo')"></div>
+
+    <div class="balloon b3"
+    onclick="popBalloon(this, 'Enta pwon aleh niyu njn engum pokathilah never mwah😭💋')"></div>
+
+    <div class="balloon b4"
+    onclick="popBalloon(this, 'I LOVE YOU MORE THAN elamm sathyavayitum enik enta jeevane kal koodthal ninne ishtava 😭')"></div>
+
+    <div class="balloon b5"
+    onclick="popBalloon(this, 'Enik ninte kudee petnn thamasikanamm😭😭 asyuooo enthorum miss avne ariyavooo thala pottitherikum')"></div>
+
+</div>
+
+<button class="magic-btn"
+onclick="nextScreen('memoryScreen')">
+    Keep going 💛
+</button>
+
+</section><!-- BALLOON POPUP --><div class="balloon-popup" id="balloonPopup"><div class="message-card">
+
+    <div id="balloonText"></div>
+
+    <button class="close-message"
+    onclick="closeBalloon()">
+        💛
+    </button>
+
+</div>
+
+</div><!-- =========================================
+     SCREEN 7 — MEMORIES
+========================================= --><section class="screen" id="memoryScreen"><h1 class="section-title">
+    A walk down<br>memory lane
+</h1>
+
+<p class="section-sub">
+    swipe through 📸
+</p>
+
+<div class="memory-gallery">
+
+    <div class="memory">
+        <img src="image1.jpg" alt="Memory">
+    </div>
+
+    <div class="memory">
+        <img src="image2.jpg" alt="Memory">
+    </div>
+
+    <div class="memory">
+        <img src="image3.jpg" alt="Memory">
+    </div>
+
+</div>
+
+<button class="magic-btn"
+onclick="nextScreen('letterScreen')">
+    Keep going ✨
+</button>
+
+</section><!-- =========================================
+     SCREEN 8 — LETTER
+========================================= --><section class="screen" id="letterScreen"><h1 class="section-title">
+    One last thing…
+</h1>
+
+<p class="section-sub">
+    Someone wrote you a letter.
+</p>
+
+<div class="envelope"
+id="envelope"
+onclick="openLetter()">
+
+    <span>💌</span>
+
+</div>
+
+<p class="open-letter-text">
+    👆 Tap to open your letter
+</p>
+
+
+<div class="letter-box" id="letterBox">
+
+    <h2>Shundarii Kunjey ❤️</h2>
+
+    <p>
+
+Shundarii kunjee
+
+😭I love you so muchh enik varanam enn ondannee like njn handwritten letterum ondakiya sadanom muttayi okke tharanamm enn paranj irinaya :( like birthday ayit ninne kanan poolum patiyilaa ee website njn kore pravishm ondaki edthath okke konda njn pinnem ith thanne cheyn madiknnee like enik ariyanmelaa enth kashtava ariyavo ithh 😭 enta kochine kanan patathe irikneeyy ahhh kashtavaaa ariyavo :( sho shaniyaycha varan patane PRARTHIKKANE I LOVE YOU SO MUCH <3
+</p>
+
+    <div style="text-align:center">
+        <button class="magic-btn"
+        onclick="nextScreen('finalScreen')">
+            Continue 💛
+        </button>
+    </div>
+
+</div>
+
+</section><!-- =========================================
+     SCREEN 9 — FINAL
+========================================= --><section class="screen" id="finalScreen"><div class="final-happy">
+    HAPPY<br>BIRTHDAY
+</div>
+
+<h2 class="final-name">
+    Kunj Kuripey 💛
+</h2>
+
+<p class="final-love">
+    To my pwonah, my shundarii kunjee,
+    my chakaraa kuttyyy… 😭💛
+    <br><br>
+    I hope your day is filled with happiness,
+    smiles, love and lots of chocolate cake 🎂
+    <br><br>
+    I LOVE YOU SO MUCHHHH 😭💛
+</p>
+
+<div style="font-size:45px;margin-top:35px">
+    🎈🎂✨💛
+</div>
+
+</section><script>
+
+/* =========================================
+   MUSIC
+========================================= */
+
+const music = document.getElementById("music");
+let musicOn = false;
+
+function toggleMusic() {
+
+    if (musicOn) {
+
+        music.pause();
+
+        musicOn = false;
+
+        document.getElementById("musicBtn").innerHTML = "🔇";
+
+    } else {
+
+        music.play().catch(() => {});
+
+        musicOn = true;
+
+        document.getElementById("musicBtn").innerHTML = "🔊";
+
+    }
+
+}
+
+
+/* =========================================
+   SCREEN NAVIGATION
+========================================= */
+
+function nextScreen(id) {
+
+    const current =
+        document.querySelector(".screen.active");
+
+    if (current) {
+
+        current.classList.remove("active");
+
+    }
+
+    const next =
+        document.getElementById(id);
+
+    next.classList.add("active");
+
+    next.scrollTop = 0;
+
+}
+
+
+/* =========================================
+   CAKE
+========================================= */
+
+function blowCake() {
+
+    document.querySelectorAll(".flame")
+        .forEach(flame => {
+
+            flame.style.transition = ".5s";
+
+            flame.style.opacity = "0";
+
+            flame.style.transform =
+                "scale(0)";
+
+        });
+
+    createConfetti(80);
+
+    setTimeout(() => {
+
+        nextScreen("balloonScreen");
+
+    }, 1200);
+
+}
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+function popBalloon(balloon, message) {
+
+    balloon.style.transform =
+        "scale(1.7)";
+
+    balloon.style.opacity = "0";
+
+    setTimeout(() => {
+
+        balloon.style.display = "none";
+
+    }, 250);
+
+    document.getElementById("balloonText")
+        .innerText = message;
+
+    document.getElementById("balloonPopup")
+        .classList.add("show");
+
+    createConfetti(20);
+
+}
+
+function closeBalloon() {
+
+    document.getElementById("balloonPopup")
+        .classList.remove("show");
+
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+function openLetter() {
+
+    document.getElementById("envelope")
+        .style.display = "none";
+
+    document.querySelector(".open-letter-text")
+        .style.display = "none";
+
+    document.getElementById("letterBox")
+        .classList.add("show");
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function createConfetti(amount) {
+
+    const colors = [
+        "#e98391",
+        "#e6ad45",
+        "#a8c6a0",
+        "#c9a1bd",
+        "#f3d66a"
+    ];
+
+    for (let i = 0; i < amount; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.background =
+            colors[Math.floor(
+                Math.random() * colors.length
+            )];
+
+        piece.style.animationDuration =
+            (Math.random() * 3 + 3) + "s";
+
+        piece.style.transform =
+            "rotate(" +
+            Math.random() * 360 +
+            "deg)";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 6500);
+
+    }
+
+}
+
+
+/* =========================================
+   FINAL CONFETTI
+========================================= */
+
+const finalScreen =
+    document.getElementById("finalScreen");
+
+const observer =
+    new MutationObserver(() => {
+
+        if (
+            finalScreen.classList.contains("active")
+        ) {
+
+            createConfetti(180);
+
+        }
+
+    });
+
+observer.observe(
+    finalScreen,
+    { attributes: true }
+);
+
+</script></body>
+</html>
